@@ -155,6 +155,6 @@ docker logs <container-id>
 ## About Author
 
 
-Hi, Piyush here ! I am experienced Software Engineer with expertise in functional and object-oriented programming, complex data modeling, and optimizing performance for distributed architectures. Skilled in troubleshooting large-scale production systems and communicating technical solutions effectively to non-technical teams. Proficient with high-level languages (Java, Python), databases (Postgres, MongoDB), and in-memory caching (Redis). Strong foundation in service-oriented and full-stack development, ensuring scalable and efficient solutions in cloud environments (GCP, AWS)."
+“Hi, I’m Piyush! As an experienced Software Engineer , I  specialize in functional and object-oriented programming, complex data modeling, and optimizing performance for distributed architectures. Skilled in troubleshooting large-scale production systems and communicating technical solutions effectively to non-technical teams. Proficient with high-level languages (Java, Python), databases (Postgres, MongoDB), and in-memory caching (Redis). Strong foundation in service-oriented and full-stack development, ensuring scalable and efficient solutions in cloud environments (GCP, AWS)."
 
  My [LinkedIn](https://www.linkedin.com/in/piyush-kanadje/)
