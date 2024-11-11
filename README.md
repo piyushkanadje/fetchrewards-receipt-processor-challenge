@@ -127,8 +127,8 @@ docker run -d -p 8080:5000 my-receipts-app
 
 4. Accessing the Application:
 
-- The application will now be running in a Docker container and is accessible at http://localhost:5000.
-- You can now use the defined routes to process receipts and retrieve points: http://localhost:5000/receipts/process for processing receipts and http://localhost:5000/receipts/{id}/points for retrieving points.
+- The application will now be running in a Docker container and is accessible at http://localhost:8080.
+- You can now use the defined routes to process receipts and retrieve points: http://localhost:8080/receipts/process for processing receipts and http://localhost:8080/receipts/{id}/points for retrieving points.
 
 5. Stop and Remove Docker Container:
 
