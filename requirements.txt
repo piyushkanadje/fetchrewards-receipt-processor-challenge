@@ -1,3 +1,5 @@
 flask
 pydantic
 flask_cors
+pytest
+pytest-mock
