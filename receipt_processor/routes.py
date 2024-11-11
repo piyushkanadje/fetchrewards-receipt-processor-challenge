@@ -47,7 +47,7 @@ def get_points_for_id(id):
         # Check if the receipt exists in the storage
         receipt = receipts.get(id)
         if not receipt:
-            return jsonify({"error": "No receipt found for that ID"}), 404
+            return jsonify({"error": "No receipt found for that ID, Please check ID Provided"}), 404
 
         # Calculate points for the found receipt
         points = calculate_total_receipt_points(receipt)
