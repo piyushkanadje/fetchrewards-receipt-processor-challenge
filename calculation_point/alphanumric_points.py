@@ -8,5 +8,6 @@ def calculate_alphanumeric_points(receipt):
     Returns:
         int: The total number of alphanumeric characters in the retailer's name.
     """
+
     retailer_name = receipt.get("retailer", "")
     return sum(1 for char in retailer_name if char.isalnum())

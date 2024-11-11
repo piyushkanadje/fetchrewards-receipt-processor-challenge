@@ -20,9 +20,6 @@ class TestItem:
 
 
 
-
-
-
 class TestReceipt:
 
     # Valid retailer name with alphanumeric characters and special symbols
