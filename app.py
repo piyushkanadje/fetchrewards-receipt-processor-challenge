@@ -1,6 +1,7 @@
 import os
 import logging
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from receipt_processor import receipt_processor_api
 
 # Set up logging configuration
@@ -23,11 +24,16 @@ def create_app():
     return app
 
 app = create_app()
+CORS(app)
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
 
 if __name__ == '__main__':
     # Run the app with configurable host and port
     app.run(
         host=os.getenv('FLASK_RUN_HOST', '0.0.0.0'),
-        port=int(os.getenv('FLASK_RUN_PORT', '5001')),
+        port=int(os.getenv('FLASK_RUN_PORT', '5000')),
         debug=app.config['DEBUG']
     )
