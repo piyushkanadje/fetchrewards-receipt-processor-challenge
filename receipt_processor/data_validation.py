@@ -2,6 +2,8 @@ from pydantic import BaseModel, Field, field_validator, conlist,model_validator,
 from typing import List
 from datetime import date, time
 import re
+from decimal import Decimal
+
 class Item(BaseModel):
     """
     Represents an item in the receipt data.
@@ -149,11 +151,11 @@ class Receipt(BaseModel):
             raise ValueError("Total must be a positive decimal with two decimal places (e.g., '1.25').")
 
         if items and total:
-            calculated_total = sum(float(item.price) for item in items)
-            if abs(calculated_total - float(total)) > 0.01: 
+            calculated_total = sum(Decimal(item.price) for item in items)
+            if abs(calculated_total - Decimal(total)) > Decimal("0.01"):  # Precision tolerance
                 raise ValueError("Total does not match the sum of item prices.")
-        
         return self
+
     
 
         

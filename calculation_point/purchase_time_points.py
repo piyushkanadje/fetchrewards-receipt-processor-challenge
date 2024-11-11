@@ -17,6 +17,5 @@ def calculate_time_points(receipt):
                 return 10
     except (ValueError, TypeError):
         # Log an error if the time format is incorrect (optional)
-        logger.warning("Invalid purchase time format: %s", purchase_time)
-        
+        pass
     return 0
