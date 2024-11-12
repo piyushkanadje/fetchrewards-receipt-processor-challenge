@@ -6,7 +6,6 @@
 - [API Specification](#api-specification)
 - [Rules for getting points](#rules-for-getting-points)
 - [Tech Stack](#tech-stack)
-- [Code snippets](#code-snippets)
 - [Structure](#structure)
 - [Setup and running instructions](#setup-and-running-instructions)
 - [About Author](#about-author)
