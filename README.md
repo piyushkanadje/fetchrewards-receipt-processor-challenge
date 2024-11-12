@@ -16,7 +16,9 @@
 In the US, Fetch Rewards has a large following of over 17 million active users. The platform lets people upload or scan receipts to collect points, which can then be traded in for gift cards or other exciting prizes.
 
 This project aims to build a web service that processes receipts and calculates rewards in line with Fetch Rewards' 'Receipt Processor' task requirements, as specified in their API documentation. The original challenge was hosted on this repository:
-[here](https://github.com/fetch-rewards/receipt-processor-challenge)
+[here](https://github.com/fetch-rewards/receipt-processor-challenge)\
+
+
 
 ## API Specification
 
@@ -128,6 +130,39 @@ docker run -d -p 8080:5000 my-receipts-app
 
 - The application will now be running in a Docker container and is accessible at http://localhost:8080.
 - You can now use the defined routes to process receipts and retrieve points: http://localhost:8080/receipts/process for processing receipts and http://localhost:8080/receipts/{id}/points for retrieving points.
+- curl requests :
+```
+curl --location 'http://localhost:8083/receipts/process' \
+--header 'Content-Type: application/json' \
+--data '{
+  "retailer": "Target",
+  "purchaseDate": "2022-01-01",
+  "purchaseTime": "13:01",
+  "items": [
+    {
+      "shortDescription": "Mountain Dew 12PK",
+      "price": "6.49"
+    },{
+      "shortDescription": "Emils Cheese Pizza",
+      "price": "12.25"
+    },{
+      "shortDescription": "Knorr Creamy Chicken",
+      "price": "1.26"
+    },{
+      "shortDescription": "Doritos Nacho Cheese",
+      "price": "3.35"
+    },{
+      "shortDescription": "   Klarbrunn 12-PK 12 FL OZ  ",
+      "price": "12.00"
+    }
+  ],
+  "total": "35.35"
+}'
+
+
+curl --location 'http://127.0.0.1:8083/receipts/<id>/points' \
+--header 'Content-Type: application/json'
+```
 
 5. Stop and Remove Docker Container:
 
