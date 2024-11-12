@@ -131,7 +131,7 @@ docker run -d -p 8080:5000 my-receipts-app
 - You can now use the defined routes to process receipts and retrieve points: http://localhost:8080/receipts/process for processing receipts and http://localhost:8080/receipts/{id}/points for retrieving points.
 - curl requests :
 ```
-curl --location 'http://localhost:8083/receipts/process' \
+curl --location 'http://localhost:8080/receipts/process' \
 --header 'Content-Type: application/json' \
 --data '{
   "retailer": "Target",
@@ -159,7 +159,7 @@ curl --location 'http://localhost:8083/receipts/process' \
 }'
 
 
-curl --location 'http://127.0.0.1:8083/receipts/<id>/points' \
+curl --location 'http://127.0.0.1:8080/receipts/<id>/points' \
 --header 'Content-Type: application/json'
 ```
 
