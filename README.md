@@ -9,7 +9,6 @@
 - [Code snippets](#code-snippets)
 - [Structure](#structure)
 - [Setup and running instructions](#setup-and-running-instructions)
-- [Demo](#demo)
 - [About Author](#about-author)
 
 # About this project 
