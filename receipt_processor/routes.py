@@ -40,7 +40,7 @@ def process_receipt_for_id():
   
     except Exception as e:
         logger.exception("Unexpected error during request processing")
-        return jsonify({"status": "error", "message": "Please upload json data"}), 400
+        return jsonify({"status": "error", "message": "Internal Server Error"}), 500
     
     return jsonify({"id": receipt_id}), 200
 
