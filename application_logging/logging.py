@@ -2,7 +2,7 @@ import logging
 from functools import wraps
 from flask import request, jsonify
 from pydantic import ValidationError
-
+from werkzeug.exceptions import BadRequest
 # Configure the logger
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,8 @@ def log_request(func):
             ]
             logger.warning(f"Validation error(s): {error_details}")
             return jsonify({"error": error_details}), 400
-
+        except BadRequest as e:
+            return jsonify({"Error" : "Please add valid json data."}), 400
         except Exception as e:
             # Log unexpected exceptions
             logger.exception("Unexpected error during request processing")

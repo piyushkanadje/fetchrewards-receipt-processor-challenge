@@ -6,7 +6,7 @@ import uuid
 from application_logging.logging import log_request
 import logging
 from calculation_point.points_calculator import calculate_total_receipt_points 
-
+from werkzeug.exceptions import BadRequest 
 logger = logging.getLogger(__name__)
 
 
@@ -18,10 +18,15 @@ receipts = {}
 @log_request
 def process_receipt_for_id():
     try:
+        if not request.is_json:
+            raise BadRequest
         data = request.get_json()
+       
+        
         receipt = Receipt(**data)
         receipt_id = str(uuid.uuid4())
         receipts[receipt_id] = receipt.model_dump()
+
     except ValidationError as e:
         error_details = []
         for err in e.errors():
@@ -32,10 +37,10 @@ def process_receipt_for_id():
             ]
         logger.warning(f"Validation error(s): {error_details}")
         return jsonify({"error": error_details}), 400
-    
+  
     except Exception as e:
         logger.exception("Unexpected error during request processing")
-        return jsonify({"status": "error", "message": "Internal server error"}), 500
+        return jsonify({"status": "error", "message": "Please upload json data"}), 400
     
     return jsonify({"id": receipt_id}), 200
 

@@ -34,6 +34,7 @@ if __name__ == '__main__':
     # Run the app with configurable host and port
     app.run(
         host=os.getenv('FLASK_RUN_HOST', '0.0.0.0'),
-        port=int(os.getenv('FLASK_RUN_PORT', '5000')),
-        debug=app.config['DEBUG']
+        port=int(os.getenv('FLASK_RUN_PORT', '5005')),
+        debug=True
+       
     )
